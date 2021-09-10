@@ -33,12 +33,9 @@ class Order
   end
 
   def order_confirmation
-    time = Time.now
-    arrival = time.hour + 1
     test = TwilioText.new
     test.send_text
-    return "Thank you! Your order was placed and will be delivered before #{arrival}:#{time.min}"
-
+    return "Thank you! Your order was placed and will be delivered before #{delivery_time}"
   end
   
   private
@@ -55,4 +52,10 @@ class Order
     end
    puts format.join("\n")
   end
+  
+  def delivery_time
+    estimate = Time.now + (60 * 60)
+    estimate.strftime('%H:%M')
+  end
+
 end
