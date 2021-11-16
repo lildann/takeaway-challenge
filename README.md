@@ -14,20 +14,32 @@ Takeaway Challenge
 
  ```
 
-Instructions
--------
-
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
-
-Task
+Summary
 -----
 
-* Fork this repo
-* Run the command 'bundle' in the project directory to ensure you have all the gems
-* Write a Takeaway program with the following user stories:
+**The Restaurant**
+* Dish
+  * A dish is created with a name and a price. 
+  * Prices are input as a float with two decimal points.
+  * Dishes can be itemised as a hash (itemise method).
+
+* Menu
+  * Dishes (itemised as a hash) can be added to the menu (add_to_menu(dish) method)
+  * Menu can be viewed (view_menu method)
+  * DEFAULT_MENU constant supplied, access with access_menu method
+  * Added a banner for the takeaway cafe: "*** TDD Greasy Spoon ***"
+
+**The Customer**
+* Order
+  * An order is initialized with an empty my_order array 
+  * Dishes can be added one by one to the order, receives name and quantity as arguments (add_dish_to_order(name, quantity) method)
+  * Cost of order calculated (order_total method)
+  * Added view_order method for customer which includes cost of item 
+  * Added how_much method to output total order cost
+  
+
+User Stories
+-----
 
 ```
 As a customer
@@ -46,6 +58,13 @@ As a customer
 So that I am reassured that my order will be delivered on time
 I would like to receive a text such as "Thank you! Your order was placed and will be delivered before 18:52" after I have ordered
 ```
+
+
+Task
+-----
+  * Fork this repo
+  * Run the command 'bundle' in the project directory to ensure you have all the gems
+
 
 * Hints on functionality to implement:
   * Ensure you have a list of dishes with prices
