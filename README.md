@@ -14,6 +14,11 @@ Takeaway Challenge
 
  ```
 
+#### A command line application for a restaurant to create dishes and build a menu, and a customer to order a takeaway and receive a confirmation text with the expected time of arrival.
+
+#### Integrated with Twilio API to send confirmation texts. Credentials and phone numbers are stored in environment variables for security.
+
+
 User Stories
 -----
 
@@ -34,6 +39,29 @@ As a customer
 So that I am reassured that my order will be delivered on time
 I would like to receive a text such as "Thank you! Your order was placed and will be delivered before 18:52" after I have ordered
 ```
+
+Summary
+-----
+
+**The Restaurant**
+* Dish
+  * A dish is created with a name and a price
+  * Prices are input as a float with two decimal points
+  * Dishes can be itemised as a hash (#itemise method)
+
+* Menu
+  * Dishes can be added to the menu (#add_to_menu(dish) method)
+  * Menu can be viewed (#view_menu method)
+  * DEFAULT_MENU constant supplied, access with access_menu method
+  * Added a banner for the takeaway cafe: "*** TDD Greasy Spoon ***"
+
+**The Customer**
+* Order
+  * An order is initialized with an empty my_order array 
+  * Dishes can be added one by one to the order, receives name and quantity as arguments (#add_dish_to_order(name, quantity))
+  * #view_order method for customer which includes cost of item 
+  * #how_much method to output total order cost
+  
 
 Getting Started
 -----
@@ -74,27 +102,3 @@ Usage of Takeaway App
 Twilio Text Confirmation
 -----
 ![Text message](images/twilio-text.jpg)
-
-
-Summary
------
-
-**The Restaurant**
-* Dish
-  * A dish is created with a name and a price
-  * Prices are input as a float with two decimal points
-  * Dishes can be itemised as a hash (#itemise method)
-
-* Menu
-  * Dishes can be added to the menu (#add_to_menu(dish) method)
-  * Menu can be viewed (#view_menu method)
-  * DEFAULT_MENU constant supplied, access with access_menu method
-  * Added a banner for the takeaway cafe: "*** TDD Greasy Spoon ***"
-
-**The Customer**
-* Order
-  * An order is initialized with an empty my_order array 
-  * Dishes can be added one by one to the order, receives name and quantity as arguments (#add_dish_to_order(name, quantity))
-  * #view_order method for customer which includes cost of item 
-  * #how_much method to output total order cost
-  
