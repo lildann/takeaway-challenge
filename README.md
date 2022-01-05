@@ -14,30 +14,6 @@ Takeaway Challenge
 
  ```
 
-Summary
------
-
-**The Restaurant**
-* Dish
-  * A dish is created with a name and a price. 
-  * Prices are input as a float with two decimal points.
-  * Dishes can be itemised as a hash (itemise method).
-
-* Menu
-  * Dishes (itemised as a hash) can be added to the menu (add_to_menu(dish) method)
-  * Menu can be viewed (view_menu method)
-  * DEFAULT_MENU constant supplied, access with access_menu method
-  * Added a banner for the takeaway cafe: "*** TDD Greasy Spoon ***"
-
-**The Customer**
-* Order
-  * An order is initialized with an empty my_order array 
-  * Dishes can be added one by one to the order, receives name and quantity as arguments (add_dish_to_order(name, quantity) method)
-  * Cost of order calculated (order_total method)
-  * Added view_order method for customer which includes cost of item 
-  * Added how_much method to output total order cost
-  
-
 User Stories
 -----
 
@@ -98,3 +74,27 @@ Usage of Takeaway App
 Twilio Text Confirmation
 -----
 ![Text message](images/twilio-text.jpg)
+
+
+Summary
+-----
+
+**The Restaurant**
+* Dish
+  * A dish is created with a name and a price
+  * Prices are input as a float with two decimal points
+  * Dishes can be itemised as a hash (#itemise method)
+
+* Menu
+  * Dishes can be added to the menu (#add_to_menu(dish) method)
+  * Menu can be viewed (#view_menu method)
+  * DEFAULT_MENU constant supplied, access with access_menu method
+  * Added a banner for the takeaway cafe: "*** TDD Greasy Spoon ***"
+
+**The Customer**
+* Order
+  * An order is initialized with an empty my_order array 
+  * Dishes can be added one by one to the order, receives name and quantity as arguments (#add_dish_to_order(name, quantity))
+  * #view_order method for customer which includes cost of item 
+  * #how_much method to output total order cost
+  

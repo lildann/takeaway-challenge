@@ -17,18 +17,6 @@ class Order
     order_display
   end
 
-  def order_total
-    sum = 0
-    menu = Menu.new.access_menu 
-    @my_order.each do |item|
-      item.each do |name, quantity|
-        menu.each do |dish| 
-          dish.each { |item, price| sum += (price * quantity) if name == item } 
-        end
-      end
-    end
-    sum.round(2)
-  end
 
   def how_much
     puts "Customer to pay £#{order_total}"
@@ -53,6 +41,19 @@ class Order
       end
     end
    puts format.join("\n")
+  end
+
+  def order_total
+    sum = 0
+    menu = Menu.new.access_menu 
+    @my_order.each do |item|
+      item.each do |name, quantity|
+        menu.each do |dish| 
+          dish.each { |item, price| sum += (price * quantity) if name == item } 
+        end
+      end
+    end
+    sum.round(2)
   end
   
   def delivery_time

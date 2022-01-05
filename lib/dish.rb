@@ -1,10 +1,10 @@
 class Dish
-  attr_reader :name, :price, :hash
+  attr_reader :name, :price
 
   def initialize(name = "Hash brown", price = 0.99)
     @name = name
     @price = price
-    @hash = {}
+    @hash = {name => price}
   end
 
   def itemise

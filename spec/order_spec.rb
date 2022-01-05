@@ -26,12 +26,6 @@ describe Order do
   end
 
   context 'calculating cost of order' do
-    it 'can process sum of order' do
-      subject.add_dish_to_order(name1, quantity1)
-      subject.add_dish_to_order(name2, quantity2)
-      expect(subject.order_total).to eq(10.95)
-    end
-
     it 'can output cost of order' do
       subject.add_dish_to_order(name1, quantity1)
       subject.add_dish_to_order(name2, quantity2)
