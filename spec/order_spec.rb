@@ -39,11 +39,11 @@ describe Order do
     end
 
     it 'will return a delivery time' do
+      order = Order.new
       estimate = Time.now + (60 * 60)
-      text = double('Twilio fake text')
-      allow(text).to receive(:send_text).and_return("Thank you! Your order was placed and will be delivered before #{estimate.strftime('%H:%M')}")
-      subject.add_dish_to_order(name1, quantity1)
-      expect(subject.order_confirmation).to eq("Thank you! Your order was placed and will be delivered before #{estimate.strftime('%H:%M')}")
+      allow(order).to receive(:order_confirmation).and_return("Thank you! Your order was placed and will be delivered before #{estimate.strftime('%H:%M')}")
+      order.add_dish_to_order(name1, quantity1)
+      expect(order.order_confirmation).to eq("Thank you! Your order was placed and will be delivered before #{estimate.strftime('%H:%M')}")
     end
   end
 end

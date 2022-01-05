@@ -1,3 +1,5 @@
+require_relative 'twilio_text'
+
 class Order 
   attr_reader :my_order 
 
@@ -33,8 +35,8 @@ class Order
   end
 
   def order_confirmation
-    test = TwilioText.new
-    test.send_text
+    text = TwilioText.new
+    text.send_text
     return "Thank you! Your order was placed and will be delivered before #{delivery_time}"
   end
   
